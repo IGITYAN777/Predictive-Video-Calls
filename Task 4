@@ -1,0 +1,33 @@
+#include <QCoreApplication>
+#include <QDebug>
+
+int addition(int number1, int number2){
+    return number1 + number2;
+}
+
+int substraction(int number1, int number2){
+    return number1 - number2;
+}
+
+int multiplication(int number1, int number2){
+    return number1 * number2;
+}
+
+int division(int number1, int number2){
+    return number1 / number2;
+}
+
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
+
+    int number1 = 77;
+    int number2 = 7;
+
+    qDebug() << addition(number1, number2);
+    qDebug() << substraction(number1, number2);
+    qDebug() << multiplication(number1, number2);
+    qDebug() << division(number1, number2);
+
+    return a.exec();
+}
