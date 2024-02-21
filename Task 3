@@ -1,55 +1,80 @@
-#include <QCoreApplication>
+#include <QApplication>
+#include <QDialog>
+#include <QLineEdit>
+#include <QFormLayout>
+#include <QDialogButtonBox>
 #include <QDebug>
-#include <QTextStream>
 
-int main(int argc, char *argv[])
-{
-    QCoreApplication a(argc, argv);
-    QTextStream usinp(stdin);
+int main(int argc, char *argv[]) {
+    QApplication a(argc, argv);
 
+    QDialog dialog;
+    dialog.setWindowTitle("Enter Number");
 
-    qDebug() << "Enter the number: ";
-    int input = usinp.readLine().trimmed().toInt();
+    QFormLayout layout(&dialog);
 
-    if(input > 0){
-        qDebug() << "Your number is positive";
-    }else if(input < 0){
-        qDebug() << "Your number is negative";
-    }else{
-        qDebug() << "Your number is 0";
-    }
+    QLineEdit numberInput;
+    layout.addRow("Number:", &numberInput);
+
+    QDialogButtonBox buttonBox(QDialogButtonBox::Ok);
+    layout.addRow(&buttonBox);
+
+    QObject::connect(&buttonBox, &QDialogButtonBox::accepted, [&]() {
+        QString inputText = numberInput.text();
+
+        bool ok;
+        int number = inputText.toInt(&ok);
+
+        if (ok) {
+            if(number > 0){
+                qDebug() << "You number is positive";
+            }else if(number < 0){
+                qDebug() << "You number is negative";
+            }else{
+                qDebug() << "You number is 0";
+            }
+
+            dialog.accept();
+        } else {
+            qDebug() << "Invalid input. Please enter a valid number.";
+        }
+    });
+
+    dialog.exec();
 
     char grade = 0;
 
-    switch (input) {
-        case 90 ... 100:
-            grade = 'A';
-            break;
-        case 80 ... 89:
-            grade = 'B';
-            break;
-        case 70 ... 79:
-            grade = 'C';
-            break;
-        case 60 ... 69:
-            grade = 'D';
-            break;
-        case 50 ... 59:
-            grade = 'E';
-            break;
-        default:
-            grade = 0;
-            qDebug() << "We do not have such grade";
-    }
+    int number = 78;
 
-    if(grade){
-        qDebug() << "Your grade is: " << grade;
-    }
+        switch (number) {
+            case 90 ... 100:
+                grade = 'A';
+                break;
+            case 80 ... 89:
+                grade = 'B';
+                break;
+            case 70 ... 79:
+                grade = 'C';
+                break;
+            case 60 ... 69:
+                grade = 'D';
+                break;
+            case 50 ... 59:
+                grade = 'E';
+                break;
+            default:
+                grade = 0;
+                qDebug() << "We do not have such grade";
+        }
+
+        if(grade){
+            qDebug() << "Your grade is: " << grade;
+        }
 
 
-    for(int i = 1; i <= 10; ++i){
-        qDebug() << i;
-    }
+        for(int i = 1; i <= 10; ++i){
+            qDebug() << i;
+        }
 
-    return a.exec();
+    return 0;
 }
