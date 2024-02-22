@@ -1,0 +1,55 @@
+* {
+    margin-top: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.homepage {
+    margin-top: 10px;
+    background-color: rgb(0, 255, 50);
+    width: 100%;
+    height: 100px;
+}
+
+#homepage{
+    margin-top: 10px;
+    background-color: rgb(0, 255, 50);
+    width: 100%;
+    height: 100px;    
+}
+
+#homepagefirsth1 {
+    font-size: 20px;
+    color: rgb(53, 128, 207);
+    text-align: center;
+    padding: 35px;
+}
+
+.forbutton1{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(200, 200, 200, 1.0);
+    margin-top: 35px;
+}
+
+.forbutton2{
+    width: 70px;
+    height: 70px;
+    background-color: rgb(200, 200, 200, 1.0);
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+#btn1{
+    width: 100%;
+    height: 100%;
+}
+
+#btn2{
+    width: 100%;
+    height: 100%;
+}
+
+.mainbuttons{
+    display: flex;
+}
