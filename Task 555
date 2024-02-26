@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <div class="tabs">
+        <button class="tab" onclick="openTab(event, 0)">Tab 1</button>
+        <button class="tab" onclick="openTab(event, 1)">Tab 2</button>
+        <button class="tab" onclick="openTab(event, 2)">Tab 3</button>
+      </div>
+
+      <div id="tabContent"></div>
+      
+      <script src="script.js"></script>
+  </body>
+</html>
+
+
+7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+
+body{
+  padding: 25px;
+}
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 10px 20px;
+  background-color: grey;
+}
+
+.tab.active {
+  background-color: white;
+}
+
+#tabContent {
+  margin-top: 20px;
+}
+
+7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+
+const tabContent = ['First Tab', 'Second Tab', 'Third Tab'];
+
+function openTab(event, tabIndex) {
+  const tabs = document.getElementsByClassName('tab');
+  
+  
+  for(var i = 0; i < tabs.length; ++i){
+    tabs[i].classList.remove('active');
+  }
+
+  event.currentTarget.classList.add('active');
+
+  document.getElementById('tabContent').innerText = tabContent[tabIndex];
+}
