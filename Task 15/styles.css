@@ -1,0 +1,25 @@
+body{
+  padding: 25px;
+}
+.tabs {
+  display: flex;
+}
+
+.tabs {
+  padding: 10px 20px;
+}
+
+.tab {
+	background-color: gray;
+	border: none;
+	padding: 15px;
+	margin-right: 10px;
+}
+
+.tab.active {
+  background-color: green;
+}
+
+#tabContent {
+  margin-top: 20px;
+}
