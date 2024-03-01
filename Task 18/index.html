@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <table id="employee-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Department</th>
+            <th>Role Title</th>
+            <th>Role Level</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Skills</th>
+          </tr>
+        </thead>
+        <tbody id="employee-table-body">
+         
+        </tbody>
+      </table>
+
+      <div>
+        <button id="addingObject" onclick="divShow()">Add</button>
+        <button id="removingObject" onclick="removeTableRow()">Remove</button>
+    </div>
+
+    <div id="btnClickAdd">
+        <div>
+            <label for="name">Enter your id: </label>
+            <input id="divID" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your name: </label>
+            <input id="divName" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your age: </label>
+            <input id="divAge" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Department: </label>
+            <input id="divDep" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Roles title: </label>
+            <input id="divRoleTitle" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Roles level: </label>
+            <input id="divRoleLevel" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Contact Email: </label>
+            <input id="divContactEmail" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Contact Phone: </label>
+            <input id="divContactPhone" type="text">
+        </div>
+        <div>
+            <label for="name">Enter your Skills: </label>
+            <input id="divSkills" type="text">
+        </div>
+        <button id="forSubmiting" onclick="submitInfo()">submit</button>
+    </div>
+
+      
+    <script src="script.js"></script>
+  </body>
+</html>
